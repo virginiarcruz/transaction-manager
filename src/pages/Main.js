@@ -43,13 +43,6 @@ const Main = () => {
     clearInputs();
   };
 
-  // const validValue = value => {
-  //   if (!value) {
-  //     return 0;
-  //   }
-  //   return parseInt(value, 10);
-  // };
-
   const newValue = inputs.valor && masks.currencyInput.mask(inputs.valor);
 
   const getAllValues =
@@ -72,6 +65,19 @@ const Main = () => {
   useEffect(() => {
     localStorage.setItem('items', JSON.stringify(items));
   }, [items]);
+
+  const debito = () => {
+    if (tipo === 'Débito') {
+      const onlyDebits = items;
+      if (onlyDebits) {
+        onlyDebits.map(debit => {
+          const valueDebit = debit.valor.replace('R$', '').trim();
+          return parseFloat(valueDebit.replace(/\./g, '').replace(',', '.'));
+        });
+      }
+    }
+  };
+  console.log('funcao', debito());
 
   return (
     <>
