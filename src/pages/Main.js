@@ -66,19 +66,6 @@ const Main = () => {
     localStorage.setItem('items', JSON.stringify(items));
   }, [items]);
 
-  const debito = () => {
-    if (tipo === 'Débito') {
-      const onlyDebits = items;
-      if (onlyDebits) {
-        onlyDebits.map(debit => {
-          const valueDebit = debit.valor.replace('R$', '').trim();
-          return parseFloat(valueDebit.replace(/\./g, '').replace(',', '.'));
-        });
-      }
-    }
-  };
-  console.log('funcao', debito());
-
   return (
     <>
       <PageContent>
