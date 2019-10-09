@@ -3,12 +3,12 @@
 
 Esta aplicação foi desenvolvida para gerenciar transações financeiras de Débito ou Crédito.
 
-### Clone o repositório
+### Para clonar o repositório
 
     git clone https://github.com/virginiarcruz/transaction-manager.git]
 
 
-### Instale as depedências
+### Para instalar as depedências
 
     yarn install ou npm install
 
